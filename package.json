@@ -1,0 +1,31 @@
+{
+  "name": "spa-text-service",
+  "version": "0.0.1",
+  "description": "British Columbia SPA text service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcgov/spa-text-service.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bcgov/spa-text-service/issues"
+  },
+  "homepage": "https://github.com/bcgov/spa-text-service#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.3",
+    "json-stringify-safe": "^5.0.1",
+    "moment": "^2.24.0",
+    "winston": "3.1.0"
+  },
+  "engines": {
+    "node": ">=10.15.1"
+  }
+}
