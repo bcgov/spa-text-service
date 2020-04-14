@@ -69,7 +69,7 @@
                   {
                     "name": "SERVICE_AUTH_TOKEN",
                     "value": "${SERVICE_AUTH_TOKEN}"
-                  }
+                  },
                   {
                     "name": "LOGGER_HOST",
                     "value": "${LOGGER_HOST}"
