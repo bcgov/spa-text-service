@@ -67,41 +67,9 @@
                 ],
                 "env": [
                   {
-                    "name": "TARGET_URL",
-                    "value": "${TARGET_URL}"
-                  },
-                  {
-                    "name": "TARGET_USERNAME_PASSWORD",
-                    "value": "${TARGET_USERNAME_PASSWORD}"
-                  },
-                  {
-                    "name": "MUTUAL_TLS_PEM_KEY_BASE64",
-                    "value": "${MUTUAL_TLS_PEM_KEY_BASE64}"
-                  },
-                  {
-                    "name": "MUTUAL_TLS_PEM_KEY_PASSPHRASE",
-                    "value": "${MUTUAL_TLS_PEM_KEY_PASSPHRASE}"
-                  },
-                  {
-                    "name": "MUTUAL_TLS_PEM_CERT",
-                    "value": "${MUTUAL_TLS_PEM_CERT}"
-                  },
-                  {
-                    "name": "SECURE_MODE",
-                    "value": "${SECURE_MODE}"
-                  },
-                  {
-                    "name": "USE_MUTUAL_TLS",
-                    "value": "${USE_MUTUAL_TLS}"
-                  },
-                  {
-                    "name": "AUTH_TOKEN_KEY",
-                    "value": "${AUTH_TOKEN_KEY}"
-                  },
-                  {
-                    "name": "USE_AUTH_TOKEN",
-                    "value": "${USE_AUTH_TOKEN}"
-                  },
+                    "name": "SERVICE_AUTH_TOKEN",
+                    "value": "${SERVICE_AUTH_TOKEN}"
+                  }
                   {
                     "name": "LOGGER_HOST",
                     "value": "${LOGGER_HOST}"
@@ -237,7 +205,7 @@
       "displayName": "Image Namespace",
       "name": "IMAGE_NAMESPACE",
       "required": true,
-      "value": "xx-tools"
+      "value": "rrhcla-tools"
     },
     {
       "description": "The TAG name for this environment, e.g., dev, test, prod",
@@ -246,67 +214,11 @@
       "value": "dev"
     },
     {
-      "description": "URL of Digital Experience MSP Service",
-      "displayName": "TARGET_URL",
-      "name": "TARGET_URL",
+      "description": "Auth token used to authenticate the service",
+      "displayName": "SERVICE_AUTH_TOKEN",
+      "name": "SERVICE_AUTH_TOKEN",
       "required": true,
-      "value": "https://d2healthgw.maximusbc.ca"
-    },
-    {
-      "description": "User name : password for the Digital Experience MSP Service",
-      "displayName": "TARGET_USERNAME_PASSWORD",
-      "name": "TARGET_USERNAME_PASSWORD",
-      "required": true,
-      "value": ""
-    },
-    {
-      "description": "Private key of the MSP-Service for the Mutual TLS negotiation",
-      "displayName": "MUTUAL_TLS_PEM_KEY_BASE64",
-      "name": "MUTUAL_TLS_PEM_KEY_BASE64",
-      "required": true,
-      "value": ""
-    },
-    {
-      "description": "Passphrase for the private key of the MSP-Service",
-      "displayName": "MUTUAL_TLS_PEM_KEY_PASSPHRASE",
-      "name": "MUTUAL_TLS_PEM_KEY_PASSPHRASE",
-      "required": true,
-      "value": ""
-    },
-    {
-      "description": "Public Certificate of the Digital Experience MSP Service to be trusted",
-      "displayName": "MUTUAL_TLS_PEM_CERT",
-      "name": "MUTUAL_TLS_PEM_CERT",
-      "required": true,
-      "value": ""
-    },
-    {
-      "description": "Use SSL",
-      "displayName": "SECURE_MODE",
-      "name": "SECURE_MODE",
-      "required": true,
-      "value": "true"
-    },
-    {
-      "description": "Use Mutual SSL",
-      "displayName": "USE_MUTUAL_TLS",
-      "name": "USE_MUTUAL_TLS",
-      "required": true,
-      "value": "true"
-    },
-    {
-      "description": "Authentication Key used in all SSL",
-      "displayName": "AUTH_TOKEN_KEY",
-      "name": "AUTH_TOKEN_KEY",
-      "required": true,
-      "value": ""
-    },
-    {
-      "description": "Use Auth Token in all SSL",
-      "displayName": "USE_AUTH_TOKEN",
-      "name": "USE_AUTH_TOKEN",
-      "required": true,
-      "value": "true"
+      "value": "none"
     },
     {
       "description": "Host name for the Splunk Forwarder",
