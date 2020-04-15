@@ -54,7 +54,7 @@ app.post('/text', function (req, res) {
         }
         res.send(response);
     } else {
-        res.status(401);
+        res.sendStatus(401);
     }
     
     
