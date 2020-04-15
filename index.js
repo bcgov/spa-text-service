@@ -54,7 +54,10 @@ app.post('/text', function (req, res) {
         }
         res.send(response);
     } else {
-        res.sendStatus(401);
+        // Debugging purposes only.
+        res.send('Recieved: ' + req.get('Authorization') + '\nExpected: spatext ' + SERVICE_AUTH_TOKEN)
+        
+        // res.sendStatus(401);
     }
     
     
