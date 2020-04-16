@@ -41,7 +41,7 @@ app.get('/status', function (req, res) {
 });
 
 app.post('/text', jsonParser, function (req, res) {
-    const body = req.body;
+    const body = req.get('SPA_TEXT_NAME');
     let response = {};
 
     if (req.get('Authorization') === 'spatext ' + SERVICE_AUTH_TOKEN) {
@@ -54,7 +54,7 @@ app.post('/text', jsonParser, function (req, res) {
             }
         }
         */
-        res.send('length: ' + JSON.stringify(body));
+        res.send('length: ' + body);
     } else {
         // Debugging purposes only.
         // res.send('Recieved: ' + req.get('Authorization') + '\nExpected: spatext ' + SERVICE_AUTH_TOKEN)
