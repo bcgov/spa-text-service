@@ -52,8 +52,7 @@ app.post('/text', function (req, res) {
                 response[envName] = process.env[envName];
             }
         }
-        res.send(process.env);
-        //res.send(response);
+        res.send('length: ' + body.length);
     } else {
         // Debugging purposes only.
         // res.send('Recieved: ' + req.get('Authorization') + '\nExpected: spatext ' + SERVICE_AUTH_TOKEN)
