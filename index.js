@@ -33,28 +33,25 @@ const logger = winston.createLogger({
 var app = express();
 //app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(bodyParser.text({ type: 'text/html' }));
-var jsonParser = bodyParser.json()
 
 // Add status endpoint
 app.get('/status', function (req, res) {
     res.send('OK');
 });
 
-app.post('/text', jsonParser, function (req, res) {
-    const body = req.get('SPA_TEXT_NAME');
+app.post('/text', function (req, res) {
+    const envNames = JSON.parse(req.get('SPA_TEXT_NAME'));
     let response = {};
 
     if (req.get('Authorization') === 'spatext ' + SERVICE_AUTH_TOKEN) {
         // Loop through environment variables searching for requested props.
-        /*
-        for (let i=0; i<body.length; i++) {
-            const envName = body[i];
+        for (let i=0; i<envNames.length; i++) {
+            const envName = envNames[i];
             if (envName && envName.length > 9 && envName.substring(0, 9).toUpperCase() === 'SPA_TEXT_') {
                 response[envName] = process.env[envName];
             }
         }
-        */
-        res.send('length: ' + body);
+        res.send(JSON.stringify(response));
     } else {
         // Debugging purposes only.
         // res.send('Recieved: ' + req.get('Authorization') + '\nExpected: spatext ' + SERVICE_AUTH_TOKEN)
