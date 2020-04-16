@@ -52,12 +52,13 @@ app.post('/text', function (req, res) {
                 response[envName] = process.env[envName];
             }
         }
-        res.send(response);
+        res.send(process.env);
+        //res.send(response);
     } else {
         // Debugging purposes only.
-        res.send('Recieved: ' + req.get('Authorization') + '\nExpected: spatext ' + SERVICE_AUTH_TOKEN)
+        // res.send('Recieved: ' + req.get('Authorization') + '\nExpected: spatext ' + SERVICE_AUTH_TOKEN)
         
-        // res.sendStatus(401);
+        res.sendStatus(401);
     }
     
     
