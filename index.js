@@ -31,8 +31,6 @@ const logger = winston.createLogger({
 // Init express
 //
 var app = express();
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(bodyParser.text({ type: 'text/html' }));
 
 // Add status endpoint
 app.get('/status', function (req, res) {
@@ -45,8 +43,7 @@ app.post('/text', function (req, res) {
 
     if (req.get('Authorization') === 'spatext ' + SERVICE_AUTH_TOKEN) {
         // Loop through environment variables searching for requested props.
-        for (let i=0; i<envNames.length; i++) {
-            const envName = envNames[i];
+        for (let envName in envNames) {
             if (envName && envName.length > 9 && envName.substring(0, 9).toUpperCase() === 'SPA_TEXT_') {
                 response[envName] = process.env[envName];
             }
