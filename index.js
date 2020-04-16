@@ -33,7 +33,6 @@ const logger = winston.createLogger({
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(bodyParser.raw());
 
 // Add status endpoint
 app.get('/status', function (req, res) {
